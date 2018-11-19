@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom"],    //lol jak nie ma "dom" to wywała ````node_modules/firebase/index.d.ts(600,36): error TS2304: Cannot find name 'ServiceWorkerRegistration'.````
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
+}
