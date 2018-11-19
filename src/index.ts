@@ -32,16 +32,15 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
 server.route('/api/data')
-    .post((req: express.Request, res: express.Response) => {
+    .post(async (req: express.Request, res: express.Response) => {
         const data = req.body
-        // add data to database
-
+        await db.insertElements(data)
         res.json(data);
     })
-    .get((req: express.Request, res: express.Response) => {
-        const {date, coord, type} = req.query;
-        db.insertElements({date, coord, type})
-        res.json({ date, coord, type })
+    .get(async (req: express.Request, res: express.Response) => {
+        const {date, coord, type, id} = req.query;
+        const result = await db.findElement(id);
+        res.json(result)
     });
 
 

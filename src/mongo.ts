@@ -16,7 +16,7 @@ export class MongoCollection {
     }
 
     async findElement(parameter?) {
-      const result = await this.collection.find(parameter ? {letter: parameter} : {}).toArray();
+      const result = await this.collection.find(parameter ? {id: parameter} : {}).toArray();
       return new Promise(resolve => resolve(result)); 
     }
 
