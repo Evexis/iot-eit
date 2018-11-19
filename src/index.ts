@@ -40,7 +40,7 @@ server.route('/api/data')
     })
     .get((req: express.Request, res: express.Response) => {
         const {date, coord, type} = req.query;
-        // db.insertElements({date, coord, type})
+        db.insertElements({date, coord, type})
         res.json({ date, coord, type })
     });
 
