@@ -17,9 +17,9 @@ const config = {
 
 // const db = firebase.database();
 
-// const collection = 'Samples';
-// const url = 'mongodb://admin:Iot-Eit-Siu-2018@ds139193.mlab.com:39193/iot-project';
-// const db = new MongoCollection(url, collection);
+const collection = 'Samples';
+const url = 'mongodb://admin:Iot-Eit-Siu-2018@ds139193.mlab.com:39193/iot-project';
+const db = new MongoCollection(url, collection);
 
 server.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     res.header("Access-Control-Allow-Origin", "*");
