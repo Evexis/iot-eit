@@ -1,6 +1,4 @@
-import * as functions from 'firebase-functions';
 import * as express from "express";
-import * as firebase from "firebase";
 import { samples } from "./mock/mock-data";
 import * as bodyParser from 'body-parser';
 import { MongoCollection } from './mongo';
@@ -15,9 +13,9 @@ const config = {
     storageBucket: "iotproject-eit.appspot.com",
     messagingSenderId: "192509429154"
 }
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
-const db = firebase.database();
+// const db = firebase.database();
 
 // const collection = 'Samples';
 // const url = 'mongodb://admin:Iot-Eit-Siu-2018@ds139193.mlab.com:39193/iot-project';
