@@ -23,7 +23,7 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 server.route('/api/data')
     .post(async (req: express.Request, res: express.Response) => {
-        const device = await db.devices.findElement(`{"deviceId": "${req.headers.id}"}`)
+        const device = await db.devices.findElement({"deviceId": req.headers.id})
         console.log(device)
         if(device[0]) {
             const data = req.body
