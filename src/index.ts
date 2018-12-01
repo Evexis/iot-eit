@@ -24,10 +24,14 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.route('/api/data')
     .post(async (req: express.Request, res: express.Response) => {
         const device = await db.devices.findElement(req.headers.id)
-        if(!device[0]) res.status(403).send("Forbidden");
-        const data = req.body
-        await db.samples.insertElements(data)
-        res.json(data);
+        if(!device[0]) {
+            res.status(403).send("Forbidden");
+        }
+        else{
+            const data = req.body
+            await db.samples.insertElements(data)
+            res.json(data);
+        }
     })
     .get(async (req: express.Request, res: express.Response) => {
         const {date, coord, type, id} = req.query;
